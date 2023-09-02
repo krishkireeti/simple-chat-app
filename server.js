@@ -11,7 +11,7 @@ let onlineUsers = [];
 
 const PORT = process.env.PORT || 4000;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
 
 io.on('connection', (socket) => {
   console.log('A user connected');
@@ -30,6 +30,10 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('A user disconnected');
+    if(socket.username) {
+      onlineUsers = onlineUsers.filter(user => user !== socket.username);
+      io.emit('update userlist', onlineUsers);
+    }
   });
 });
 
