@@ -7,7 +7,7 @@ do {
 
 socket.emit("user joined", username);
 
-socket.on("update userList", (users) => {
+socket.on("update userlist", (users) => {
   const contactsList = document.querySelector(".contact-list");
   contactsList.innerHTML = ""; // Clear the list first
 
@@ -17,7 +17,7 @@ socket.on("update userList", (users) => {
 
     const contactNameSpan = document.createElement("span");
     contactNameSpan.className = "contact-name";
-    contactNameSpan.textContent = user.name;
+    contactNameSpan.textContent = user;
 
     contactItem.appendChild(contactNameSpan);
     contactsList.appendChild(contactItem);
