@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
     if(onlineUsers.indexOf(username) === -1) {
       onlineUsers.push(username);
       socket.username = username;
-      io.emit('update userlist', onlineUsers);
+      io.emit('updateUserList', onlineUsers);
     }
   })
 
@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
     console.log('A user disconnected');
     if(socket.username) {
       onlineUsers = onlineUsers.filter(user => user !== socket.username);
-      io.emit('update userlist', onlineUsers);
+      io.emit('updateUserList', onlineUsers);
     }
   });
 });

@@ -7,7 +7,7 @@ do {
 
 socket.emit("user joined", username);
 
-socket.on("update userlist", (users) => {
+socket.on("updateUserList", (users) => {
   const contactsList = document.querySelector(".contact-list");
   contactsList.innerHTML = ""; // Clear the list first
 
