@@ -19,12 +19,13 @@ const emojiMap = {
 🛠️ Technical Implementation
 
 Backend: Node.js with Express handles the server-side logic and static file serving.
+
 Real-time Communication: Socket.io manages the "Events" (e.g., chat message, typing, user connected).
 
 Frontend Logic: A simple emojiMap object intercepts message strings before they are emitted to the server to perform replacements.
 
 📈 Future Roadmap: 
-The next phaseof this project involves migrating the current "Plain UI" to React. 
+The next phase of this project involves migrating the current "Plain UI" to React. 
  
 This will allow for:
 1) Better state management for chat history.
